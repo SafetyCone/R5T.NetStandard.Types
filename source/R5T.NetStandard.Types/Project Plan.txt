@@ -1,0 +1,4 @@
+R5T.NetStandard.Types - A base types library containing types that only depend on base .NET Standard functionality.
+
+Goals
+

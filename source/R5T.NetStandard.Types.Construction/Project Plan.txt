@@ -1,0 +1,4 @@
+R5T.NetStandard.Types.Construction - A construction console entry-point for the R5T.NetStandard.Types library (A base types library containing types that only depend on base .NET Standard functionality.).
+
+Goals
+
