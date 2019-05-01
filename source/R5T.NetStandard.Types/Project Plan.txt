@@ -2,3 +2,7 @@ R5T.NetStandard.Types - A base types library containing types that only depend o
 
 Goals
 
+
+Notes
+
+* Built with C# 7.3 for Enum class.
