@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 
 
-namespace R5T.NetStandard.Types.Code.Helpers
+namespace R5T.NetStandard
 {
     public static class OsHelper
     {
