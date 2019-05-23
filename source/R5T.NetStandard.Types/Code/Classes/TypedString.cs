@@ -5,7 +5,7 @@ namespace R5T.NetStandard
 {
     /// <summary>
     /// Allow wrapping a string with a specific type.
-    /// This is helpful in creating strongly-typed string for stringly-typed data. Examples: diretory path.
+    /// This is helpful in creating strongly-typed strings for stringly-typed data. Examples: diretory path.
     /// </summary>
     /// <remarks>
     /// Many objects are "stringly-typed". For example, project name, project directory name, and project directory path are all strings, but are really different types of string.
