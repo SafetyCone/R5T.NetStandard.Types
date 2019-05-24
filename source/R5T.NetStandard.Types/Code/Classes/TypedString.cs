@@ -6,6 +6,7 @@ namespace R5T.NetStandard
     /// <summary>
     /// Allow wrapping a string with a specific type.
     /// This is helpful in creating strongly-typed strings for stringly-typed data. Examples: diretory path.
+    /// Value is read-only, just like the value of a string.
     /// </summary>
     /// <remarks>
     /// Many objects are "stringly-typed". For example, project name, project directory name, and project directory path are all strings, but are really different types of string.
@@ -16,12 +17,8 @@ namespace R5T.NetStandard
     /// </remarks>
     public abstract class TypedString : IEquatable<TypedString>, IComparable<TypedString>
     {
-        public string Value { get; set; }
+        public string Value { get; }
 
-
-        public TypedString()
-        {
-        }
 
         public TypedString(string value)
         {
