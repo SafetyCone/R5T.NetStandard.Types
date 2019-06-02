@@ -2,6 +2,16 @@ R5T.NetStandard.Types - A base types library containing types that only depend o
 
 Goals
 
+Design
+
+IDescriber - Allows encapsulating the behavior of describing an object.
+IDescriber<T> - Allows specifying the type that can be described. The generic interface does not inherit from the non-generic interface to allow implementers the option of not implementing the non-generic Describe(object) (which requires a type-check on the input object instance to ensure it has the specified generic type).
+ToStringDescriber - A simple describer that just calls the object.ToString() method.
+
+IStringSerializer<T> - Allows serialization to/from a string type.
+
+IDescriber vs. IStringSerializer - Description implies uni-directional object to string only, while serialization implies bi-directional object to string and string to object.
+
 
 Notes
 
