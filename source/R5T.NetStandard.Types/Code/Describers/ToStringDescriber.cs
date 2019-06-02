@@ -14,4 +14,17 @@ namespace R5T.NetStandard
             return output;
         }
     }
+
+    public class ToStringDescriber<T> : IDescriber<T>, IDescriber
+    {
+        public string Describe(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Describe(T obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
