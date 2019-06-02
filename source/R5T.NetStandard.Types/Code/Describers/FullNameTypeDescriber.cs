@@ -8,6 +8,14 @@ namespace R5T.NetStandard
     /// </summary>
     public class FullNameTypeDescriber : IDescriber<Type>
     {
+        #region Static
+
+        public static readonly FullNameTypeDescriber Instance = new FullNameTypeDescriber();
+
+        #endregion
+
+
+
         public string Describe(Type type)
         {
             var description = type.FullName;

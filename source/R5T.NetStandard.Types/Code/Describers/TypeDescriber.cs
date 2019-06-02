@@ -8,6 +8,13 @@ namespace R5T.NetStandard
     /// </summary>
     public class TypeDescriber : IDescriber<Type>
     {
+        #region Static
+
+        public static readonly TypeDescriber Instance = new TypeDescriber();
+
+        #endregion
+
+
         public string Describe(Type type)
         {
             var description = type.Name;

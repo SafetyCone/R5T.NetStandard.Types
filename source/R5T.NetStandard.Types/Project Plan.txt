@@ -12,6 +12,11 @@ IStringSerializer<T> - Allows serialization to/from a string type.
 
 IDescriber vs. IStringSerializer - Description implies uni-directional object to string only, while serialization implies bi-directional object to string and string to object. Description also implies a lossy serialization (not all object information is serialized). Serialization by definition means capturing all object information.
 
+FullNameTypeDescriber - Describes types using their namespace and name.
+TypeDescriber - Describes types using just their name (which interestingly is a property of the Type class base-class System.Reflection.MemberInfo).
+
+ObjectDescriber - Describes both the type and value of an object instance.
+
 
 Notes
 
