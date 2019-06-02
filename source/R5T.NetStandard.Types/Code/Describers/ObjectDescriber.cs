@@ -40,7 +40,7 @@ namespace R5T.NetStandard
             var typeDescription = this.TypeDescriber.Describe(objType);
             var valueDescription = this.ValueDescriber.Describe(obj);
 
-            var description = $"[{typeDescription}]:{valueDescription}";
+            var description = $"[{typeDescription}]:\"{valueDescription}\"";
             return description;
         }
     }
