@@ -10,7 +10,7 @@ ToStringDescriber - A simple describer that just calls the object.ToString() met
 
 IStringSerializer<T> - Allows serialization to/from a string type.
 
-IDescriber vs. IStringSerializer - Description implies uni-directional object to string only, while serialization implies bi-directional object to string and string to object.
+IDescriber vs. IStringSerializer - Description implies uni-directional object to string only, while serialization implies bi-directional object to string and string to object. Description also implies a lossy serialization (not all object information is serialized). Serialization by definition means capturing all object information.
 
 
 Notes
