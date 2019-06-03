@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace R5T.NetStandard.Types
+namespace R5T.NetStandard
 {
     /// <summary>
     /// Allows encapsulating a function for describing objects.

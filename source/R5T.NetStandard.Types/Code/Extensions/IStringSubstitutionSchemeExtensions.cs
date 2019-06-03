@@ -6,7 +6,7 @@ using System.Text;
 using R5T.NetStandard.Extensions;
 
 
-namespace R5T.NetStandard.Types.Code.Extensions
+namespace R5T.NetStandard
 {
     public static class IStringSubstitutionSchemeExtensions
     {
