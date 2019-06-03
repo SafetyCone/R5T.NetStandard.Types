@@ -11,9 +11,17 @@ namespace R5T.NetStandard
         #region Static
 
         /// <summary>
+        /// Provides the default type describer (the <see cref="NetStandard.TypeDescriber.Instance"/>).
+        /// </summary>
+        public static readonly IDescriber<Type> DefaultTypeDescriber = NetStandard.TypeDescriber.Instance;
+        /// <summary>
+        /// Provides the default value describer (a <see cref="ToStringDescriber"/> from <see cref="Describer.Default"/>).
+        /// </summary>
+        public static readonly IDescriber DefaultValueDescriber = Describer.Default;
+        /// <summary>
         /// Deafult uses <see cref="NetStandard.TypeDescriber.Instance"/> and <see cref="Describer.Default"/>.
         /// </summary>
-        public static readonly ObjectDescriber Default = new ObjectDescriber();
+        public static readonly ObjectDescriber Default = new ObjectDescriber(ObjectDescriber.DefaultTypeDescriber, ObjectDescriber.DefaultValueDescriber);
 
         #endregion
 
@@ -29,7 +37,6 @@ namespace R5T.NetStandard
         }
 
         public ObjectDescriber()
-            : this(NetStandard.TypeDescriber.Instance, Describer.Default)
         {
         }
 
