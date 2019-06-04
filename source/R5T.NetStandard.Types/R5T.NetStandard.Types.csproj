@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>7.3</LangVersion>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
     <PackageLicenseUrl>https://github.com/MinexAutomation/R5T.NetStandard.Types/blob/master/LICENSE</PackageLicenseUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
