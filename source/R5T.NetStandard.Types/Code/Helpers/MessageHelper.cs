@@ -56,7 +56,7 @@ namespace R5T.NetStandard
 
         public static string JoinClausesSpecifySeparator(string clauseSeparator, params string[] clauses)
         {
-            var message = clauses.Concatenate(MessageHelper.DefaultClauseSeparator);
+            var message = clauses.Concatenate(clauseSeparator);
             return message;
         }
     }
