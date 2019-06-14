@@ -8,7 +8,7 @@ namespace R5T.NetStandard
     /// </summary>
     /// <remarks>
     /// The formatting details are left unspecified.
-    /// The <see cref="IStringSerializer{T}"/> interfaces differs from the <see cref="IDescriber"/> interface in that description is uni-directional, object to string only, while serialization implies bi-directional, object to string and string to object.
+    /// The <see cref="IStringSerializer{T}"/> interfaces differs from the IDescriber interface in that description is uni-directional, object to string only, while serialization implies bi-directional, object to string and string to object.
     /// Description also implies lossy serialization, while serialization implies that all object information is captured.
     /// </remarks>
     public interface IStringSerializer<T>
