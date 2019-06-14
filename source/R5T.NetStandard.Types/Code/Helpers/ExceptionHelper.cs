@@ -8,9 +8,26 @@ namespace R5T.NetStandard
         /// <summary>
         /// Provides a message indicating that an instance was not of the expected type.
         /// </summary>
+        public static string UnexpectedTypeExceptionMessage(Type unexpectedType)
+        {
+            var output = $"Unexpected type. Type {unexpectedType.FullName} was unexpected.";
+            return output;
+        }
+
+        public static string UnexpectedTypeExceptionMessage<TUnexpectedType>(TUnexpectedType instance)
+        {
+            var unexpectedType = typeof(TUnexpectedType);
+
+            var output = ExceptionHelper.UnexpectedTypeExceptionMessage(unexpectedType);
+            return output;
+        }
+
+        /// <summary>
+        /// Provides a message indicating that an instance was not of the expected type.
+        /// </summary>
         public static string UnexpectedTypeExceptionMessage(Type expectedType, Type foundType)
         {
-            var output = $@"Wrong type. Expected: {expectedType.FullName}, Found: {foundType.FullName}";
+            var output = $"Unexpected type. Expected: {expectedType.FullName}, Found: {foundType.FullName}";
             return output;
         }
 
@@ -37,7 +54,7 @@ namespace R5T.NetStandard
         /// </summary>
         public static string InvalidCastExceptionMessage(Type expectedType, object obj)
         {
-            var output = $@"Wrong type. Expected {expectedType}, found: {obj.GetType().FullName}";
+            var output = $"Invalid cast. Allowed: {expectedType}, found: {obj.GetType().FullName}";
             return output;
         }
 
