@@ -42,6 +42,11 @@ namespace R5T.NetStandard
             log.LogInformation($@"{serviceName.ToUpperInvariant()} - Adding service...");
         }
 
+        public static void LogBuiltServiceProvider(this ILogger log)
+        {
+            log.LogInformationEmphasis(@"Built service provider.");
+        }
+
         public static void LogFunctionName(this ILogger log, string functionName)
         {
             log.LogInformation($@"{functionName}: Running function {functionName}.");
