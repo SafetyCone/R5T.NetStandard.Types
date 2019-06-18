@@ -144,6 +144,11 @@ namespace R5T.NetStandard
             return services;
         }
 
+        /// <summary>
+        /// Allows specifying that a different service should provide the specified service by forwarding the different service as the specified service.
+        /// </summary>
+        /// <typeparam name="TService">The service type.</typeparam>
+        /// <typeparam name="TForwardedService">The different service type that implements the service type.</typeparam>
         public static IServiceCollection AddSingletonForward<TService, TForwardedService>(this IServiceCollection services, ILogger logger)
             where TForwardedService : TService
             where TService : class
