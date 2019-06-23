@@ -46,6 +46,9 @@ namespace R5T.NetStandard
             return message;
         }
 
+        /// <summary>
+        /// Returns a message explaining that a value must be within the range from <paramref name="minimum"/> to <paramref name="maximum"/>, inclusive.
+        /// </summary>
         public static string AllowedRange<TValue>(TValue minimum, TValue maximum)
         {
             var defaultMinimumInclusive = true;
