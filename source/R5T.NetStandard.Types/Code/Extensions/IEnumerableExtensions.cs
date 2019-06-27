@@ -50,5 +50,42 @@ namespace R5T.NetStandard.Extensions
             var output = source.Select(func);
             return output;
         }
+
+        public static bool HasSingle<T>(this IEnumerable<T> source, Func<T, bool> predicate, out T value)
+        {
+            value = source.Where(predicate).SingleOrDefault();
+
+            var output = value != default;
+            return output;
+        }
+
+        public static bool HasSingle<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            var output = source.HasSingle(predicate, out var dummy);
+            return output;
+        }
+
+        public static T GetSingle<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            var hasSingle = source.HasSingle(predicate, out var value);
+            if(!hasSingle)
+            {
+                throw new InvalidOperationException("No value found.");
+            }
+
+            return value;
+        }
+
+        public static T AcquireSingle<T>(this IEnumerable<T> source, Func<T, bool> predicate, Func<T> constructor)
+        {
+            var hasSingle = source.HasSingle(predicate, out var value);
+            if(hasSingle)
+            {
+                return value;
+            }
+
+            value = constructor();
+            return value;
+        }
     }
 }
