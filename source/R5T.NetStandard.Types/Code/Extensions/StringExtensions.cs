@@ -31,6 +31,34 @@ namespace R5T.NetStandard
             var beginsWith = @string.Substring(0, beginning.Length) == beginning;
             return beginsWith;
         }
+
+        public static string Append(this string @string, string appendix)
+        {
+            var output = @string + appendix;
+            return output;
+        }
+
+        /// <summary>
+        /// Returns a string of the specified length ending at the specified end-index.
+        /// </summary>
+        /// <param name="string">The string to sub-string.</param>
+        /// <param name="endIndex">The last index in the string (zero-based, inclusive).</param>
+        /// <param name="length">The number of characters to return.</param>
+        public static string SubstringFromEnd(this string @string, int endIndex, int length)
+        {
+            var startIndex = endIndex - length + 1;
+
+            var output = @string.Substring(startIndex, length);
+            return output;
+        }
+
+        public static string SubstringFromEnd(this string @string, int endIndex)
+        {
+            var length = endIndex + 1;
+
+            var output = @string.SubstringFromEnd(endIndex, length);
+            return output;
+        }
     }
 }
 
