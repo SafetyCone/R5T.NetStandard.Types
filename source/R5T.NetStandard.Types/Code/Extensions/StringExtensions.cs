@@ -34,29 +34,25 @@ namespace R5T.NetStandard
 
         public static string Append(this string @string, string appendix)
         {
-            var output = @string + appendix;
+            var output = @string.Suffix(appendix);
             return output;
         }
 
         /// <summary>
-        /// Returns a string of the specified length ending at the specified end-index.
+        /// Returns the input string, except without the last specified number of characters (a positive integer).
         /// </summary>
-        /// <param name="string">The string to sub-string.</param>
-        /// <param name="endIndex">The last index in the string (zero-based, inclusive).</param>
-        /// <param name="length">The number of characters to return.</param>
-        public static string SubstringFromEnd(this string @string, int endIndex, int length)
+        public static string ExceptLast(this string @string, int numberOfCharacters)
         {
-            var startIndex = endIndex - length + 1;
-
-            var output = @string.Substring(startIndex, length);
+            var output = @string.Substring(0, @string.Length - numberOfCharacters);
             return output;
         }
 
-        public static string SubstringFromEnd(this string @string, int endIndex)
+        /// <summary>
+        /// Returns the input string, except without the last character.
+        /// </summary>
+        public static string ExceptLast(this string @string)
         {
-            var length = endIndex + 1;
-
-            var output = @string.SubstringFromEnd(endIndex, length);
+            var output = @string.ExceptLast(1);
             return output;
         }
     }
