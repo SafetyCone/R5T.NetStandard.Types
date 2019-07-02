@@ -87,5 +87,15 @@ namespace R5T.NetStandard.Extensions
             value = constructor();
             return value;
         }
+
+        /// <summary>
+        /// Perform an action on an <see cref="IEnumerable{T}"/> using a fluent API.
+        /// </summary>
+        public static IEnumerable<T> Fluent<T>(this IEnumerable<T> source, Action<IEnumerable<T>> action)
+        {
+            action(source);
+
+            return source;
+        }
     }
 }
