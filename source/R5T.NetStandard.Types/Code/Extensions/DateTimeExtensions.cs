@@ -25,7 +25,7 @@ namespace R5T.NetStandard.Extensions
             return output;
         }
 
-        public static string ToYYYYMMDD_HHMMSS_String(this DateTime dateTime)
+        public static string ToYYYYMMDD_HHMMSS(this DateTime dateTime)
         {
             string yyyymmdd = dateTime.ToYYYYMMDD();
             string hhmmss = dateTime.ToHHMMSS();
@@ -40,7 +40,7 @@ namespace R5T.NetStandard.Extensions
             return output;
         }
 
-        public static string ToYYYYMMDD_HHMMSS_FFF_String(this DateTime dateTime)
+        public static string ToYYYYMMDD_HHMMSS_FFF(this DateTime dateTime)
         {
             var yyyymmdd = dateTime.ToYYYYMMDD();
             var hhmmssfff = dateTime.ToHHMMSS_FFF();
