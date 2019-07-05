@@ -39,6 +39,24 @@ namespace R5T.NetStandard
         }
 
         /// <summary>
+        /// Returns the input string, except without the first specified number of characters (a positive integer).
+        /// </summary>
+        public static string ExceptFirst(this string @string, int numberOfCharacters)
+        {
+            var output = @string.Substring(numberOfCharacters);
+            return output;
+        }
+
+        /// <summary>
+        /// Returns the input string, except without the first character.
+        /// </summary>
+        public static string ExceptFirst(this string @string)
+        {
+            var output = @string.ExceptFirst(1);
+            return output;
+        }
+
+        /// <summary>
         /// Returns the input string, except without the last specified number of characters (a positive integer).
         /// </summary>
         public static string ExceptLast(this string @string, int numberOfCharacters)
