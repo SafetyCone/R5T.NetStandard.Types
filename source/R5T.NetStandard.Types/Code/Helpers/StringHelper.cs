@@ -5,6 +5,8 @@ namespace R5T.NetStandard
 {
     public static class StringHelper
     {
+        public const string Invalid = null;
+
         /// <summary>
         /// The return value of the <see cref="String.IndexOf(string)"/> method when the search string is not found.
         /// </summary>
@@ -18,6 +20,12 @@ namespace R5T.NetStandard
         {
             var isFound = index != StringHelper.IndexOfNotFound;
             return isFound;
+        }
+
+        public static bool IsValid(string value)
+        {
+            var output = value != StringHelper.Invalid;
+            return output;
         }
     }
 }
