@@ -14,13 +14,21 @@ namespace R5T.NetStandard
 
         public static string Last(this StringBuilder builder)
         {
+            if(builder.Length < 1)
+            {
+                return StringHelper.Invalid;
+            }
+
             var output = builder.LastChar().ToString();
             return output;
         }
 
         public static void RemoveLast(this StringBuilder builder)
         {
-            builder.Remove(builder.Length - 1, 1);
+            if(builder.Length > 0)
+            {
+                builder.Remove(builder.Length - 1, 1);
+            }
         }
 
         public static void RemoveFromEnd(this StringBuilder builder, string @string)
