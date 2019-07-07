@@ -16,6 +16,19 @@ namespace R5T.NetStandard.Extensions
     public static class IEnumerableExtensions
     {
         /// <summary>
+        /// Wraps this object instance into an IEnumerable&lt;T&gt;
+        /// consisting of a single item.
+        /// </summary>
+        /// <typeparam name="T"> Type of the object. </typeparam>
+        /// <param name="item"> The instance that will be wrapped. </param>
+        /// <returns> An IEnumerable&lt;T&gt; consisting of a single item. </returns>
+        // From: https://stackoverflow.com/questions/1577822/passing-a-single-item-as-ienumerablet
+        public static IEnumerable<T> ToEnumerable<T>(this T item)
+        {
+            yield return item;
+        }
+
+        /// <summary>
         /// Allows adding a few extra items to an enumerable.
         /// </summary>
         public static IEnumerable<T> And<T>(this IEnumerable<T> enumerable, params T[] extras)
@@ -48,6 +61,12 @@ namespace R5T.NetStandard.Extensions
         public static IEnumerable<TOut> ForEach<TIn, TOut>(this IEnumerable<TIn> source, Func<TIn, TOut> func)
         {
             var output = source.Select(func);
+            return output;
+        }
+
+        public static bool IsEmpty<T>(this IEnumerable<T> source)
+        {
+            var output = source.Count() < 1;
             return output;
         }
 
