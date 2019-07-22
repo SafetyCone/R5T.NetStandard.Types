@@ -73,6 +73,15 @@ namespace R5T.NetStandard
             var output = @string.ExceptLast(1);
             return output;
         }
+
+        /// <summary>
+        /// An ease-of-use overload that allows using a single string as the separator (instead of a full string array).
+        /// </summary>
+        public static string[] Split(this string @string, string separator, StringSplitOptions stringSplitOptions = StringSplitOptions.None)
+        {
+            var output = @string.Split(new string[] { separator }, stringSplitOptions);
+            return output;
+        }
     }
 }
 
