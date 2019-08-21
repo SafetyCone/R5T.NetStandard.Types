@@ -6,6 +6,13 @@ namespace R5T.NetStandard.Extensions
 {
     public static class ListExtensions
     {
+        public static List<T> AddRangeFluent<T>(this List<T> list, IEnumerable<T> enumerable)
+        {
+            list.AddRange(enumerable);
+
+            return list;
+        }
+
         public static List<T> SortFluent<T>(this List<T> list)
         {
             list.Sort();
