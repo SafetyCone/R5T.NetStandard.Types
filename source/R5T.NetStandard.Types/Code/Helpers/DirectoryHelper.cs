@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 
 namespace R5T.NetStandard
@@ -9,9 +10,9 @@ namespace R5T.NetStandard
         /// <summary>
         /// Deletes a directory path.
         /// The <see cref="System.IO.Directory.Delete(string)"/> method throws a <see cref="System.IO.DirectoryNotFoundException"/> if attempting to delete a non-existent directory. This is annoying.
-        /// All you really want is the directory to not exist, so this method simple takes care of checking if the directory exists.
-        /// Also annoying, you need to specify the recursive option to delete a directory with anything in it. This method take care of that.
-        /// Even more annoying, even after specifying the recursive option, the system method will not delete read-only files.
+        /// All you really want is the directory to not exist, so this method simply takes care of checking if the directory exists.
+        /// Also annoying, you need to specify the recursive option to delete a directory with anything in it. This method also takes care of specifying true for the recursive option.
+        /// Even more annoying, even after specifying the recursive option, the system method will not delete read-only files. Thus this method disables read-only options on all files recursively.
         /// </summary>
         public static void Delete(string directoryPath)
         {
@@ -50,6 +51,18 @@ namespace R5T.NetStandard
             {
                 DirectoryHelper.DisableReadOnly(subdirectory);
             }
+        }
+
+        /// <summary>
+        /// It's often a good idea to wait a bit after deleting a directory.
+        /// This allows the system and any shell extensions (TortoiseSVN, TortoiseGit, etc.) to complete their tasks.
+        /// </summary>
+        /// <remarks>
+        /// The <see cref="DirectoryHelper"/> offers this functionality for ease of use, allowing client code to skip using the threading namespace, the <see cref="Thread"/> class, etc.
+        /// </remarks>
+        public static void SleepAfterDelete(int numberOfMilliseconds = 1000)
+        {
+            Thread.Sleep(numberOfMilliseconds);
         }
     }
 }
