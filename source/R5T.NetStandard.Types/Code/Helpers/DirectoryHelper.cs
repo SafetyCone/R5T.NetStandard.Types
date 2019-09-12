@@ -7,6 +7,11 @@ namespace R5T.NetStandard
 {
     public static class DirectoryHelper
     {
+        public static void Create(string directoryPath)
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
+
         /// <summary>
         /// Deletes a directory path.
         /// The <see cref="System.IO.Directory.Delete(string)"/> method throws a <see cref="System.IO.DirectoryNotFoundException"/> if attempting to delete a non-existent directory. This is annoying.
