@@ -74,13 +74,13 @@ namespace R5T.NetStandard.Extensions
         {
             value = source.Where(predicate).SingleOrDefault();
 
-            var output = value != default;
+            var output = !value.Equals(default(T));
             return output;
         }
 
         public static bool HasSingle<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
-            var output = source.HasSingle(predicate, out var dummy);
+            var output = source.HasSingle(predicate, out _);
             return output;
         }
 
